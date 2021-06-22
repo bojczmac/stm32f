@@ -15,15 +15,15 @@ set(CMAKE_C_EXTENSIONS ON)
 
 set(CMAKE_OSX_SYSROOT ${CMAKE_CURRENT_SOURCE_DIR})
 
-project(stm32f0)
+project(stm32f4)
 set(TARGET ${PROJECT_NAME}.elf)
 
-set(PROCESSOR_FAMILY ARM_CM0)
-set(STM32_FAMILY "F0")
-set(STM32CUBEDIR "STM32CubeF0")
+set(PROCESSOR_FAMILY ARM_CM4)
+set(STM32_FAMILY "F4")
+set(STM32CUBEDIR "STM32CubeF4")
 string(TOLOWER ${STM32_FAMILY} STM32_FAMILY_LC)
-set(MCU_LD_NAME "STM32F030R8Tx")
-set(MCU_NAME "STM32F030x8")
+set(MCU_LD_NAME "STM32F411RETx")
+set(MCU_NAME "STM32F411xE")
 string(TOLOWER ${MCU_NAME} MCU_NAME_LC)
 
 set(CMAKE_SYSTEM_NAME               Generic)
@@ -47,8 +47,8 @@ IF( NOT CMAKE_BUILD_TYPE )
   SET(CMAKE_BUILD_TYPE "${default_build_type}" CACHE STRING "Choose the type of build." FORCE)
 ENDIF()
 
-SET(CMAKE_C_FLAGS " -march=armv6-m -mthumb -fno-builtin -mcpu=cortex-m0 -mfloat-abi=soft -Wall -DNDEBUG -D${MCU_NAME} -std=gnu99 -ffunction-sections -fdata-sections -fomit-frame-pointer -mabi=aapcs -ffast-math -ftree-vectorize" CACHE INTERNAL "c compiler flags")
-SET(CMAKE_ASM_FLAGS " -march=armv6-m -mthumb -mcpu=cortex-m0 -mfloat-abi=soft -Wa,--no-warn -Wall -DNDEBUG -D${MCU_NAME} -x assembler-with-cpp" CACHE INTERNAL "asm compiler flags")
+SET(CMAKE_C_FLAGS " -march=armv7e-m -mthumb -fno-builtin -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -Wall -DNDEBUG -D${MCU_NAME} -std=gnu99 -ffunction-sections -fdata-sections -fomit-frame-pointer -mabi=aapcs -ffast-math -ftree-vectorize" CACHE INTERNAL "c compiler flags")
+SET(CMAKE_ASM_FLAGS " -march=armv7e-m -mthumb -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -Wa,--no-warn -Wall -DNDEBUG -D${MCU_NAME} -x assembler-with-cpp" CACHE INTERNAL "asm compiler flags")
 
 SET(CMAKE_EXE_LINKER_FLAGS "-Wl,--gc-sections -mthumb --specs=nano.specs --specs=nosys.specs -Wl,-Map,\"${TARGET}.map\"" CACHE INTERNAL "executable linker flags")
 

@@ -5,15 +5,14 @@
 	"version": "0.2.0",
 	"configurations": [
 		{
-			"name": "Cortex Debug",
+			"name": "Cortex Debug (ST-Util)",
 			"cwd": "${workspaceRoot}",
-			"executable": "${workspaceRoot}/build/stm32f0.elf",
+			"executable": "${workspaceRoot}/build/stm32f4.elf",
 			"request": "launch",
-			"svdFile": "${workspaceRoot}/svd/STM32F0x0.svd",
+			"svdFile": "${workspaceRoot}/svd/STM32F411.svd",
 			"type": "cortex-debug",
-			"servertype": "bmp",
-			"BMPGDBSerialPort": "/dev/cu.usbmodem79ACA1C31",
-			"powerOverBMP": "enable"
+			"servertype": "stutil",
+			"device": "STM32F411RE",
 		}
 	]
 }

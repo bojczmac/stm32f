@@ -3,19 +3,19 @@
         {
             "name": "bare-metal",
             "includePath": [
-                "${workspaceFolder}/STM32CubeF0/Drivers/STM32F0xx_HAL_Driver/Inc",
+                "${workspaceFolder}/STM32CubeF4/Drivers/STM32F4xx_HAL_Driver/Inc",
                 "${workspaceFolder}/app/inc",
                 "${workspaceFolder}/common/inc",
-                "${workspaceFolder}/STM32CubeF0/Drivers/CMSIS/Include",
-                "${workspaceFolder}/STM32CubeF0/Drivers/CMSIS/Device/ST/STM32F0xx/Include",
+                "${workspaceFolder}/STM32CubeF4/Drivers/CMSIS/Include",
+                "${workspaceFolder}/STM32CubeF4/Drivers/CMSIS/Device/ST/STM32F4xx/Include",
                 "${workspaceFolder}/board/inc"
             ],
             "defines": [
                 "NDEBUG",
-                "STM32F030x8"
+                "STM32F411xE"
             ],
             "macFrameworkPath": [],
-            "compilerPath": "/Applications/ARM/bin/arm-none-eabi-gcc",
+            "compilerPath": "arm-none-eabi-gcc",
             "cStandard": "gnu17",
             "cppStandard": "gnu++14",
             "intelliSenseMode": "linux-gcc-arm"
